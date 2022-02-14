@@ -1,0 +1,26 @@
+
+    <div class="col-md-4 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h3 *ngIf="edit" >Editar Producto</h3>
+                <h3 *ngIf="!edit" >Nuevo Producto</h3>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre"  [(ngModel)]="producto.NOMBRE" class="form-control" name="nombre" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="descripcion" placeholder="Descripcion"[(ngModel)]="producto.DESCRIPCION" class="form-control" cols="30" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name ="Precio_Compra" placeholder="Precio de Compra" [(ngModel)]="producto.Precio_Compra" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="Precio_Venta" placeholder="Precio de Venta" [(ngModel)]="producto.Precio_Venta" class="form-control" >
+                    </div>
+                    <button class="btn btn-success btn-block" (click) ="edit ? updateProducto() : addProducto()">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>

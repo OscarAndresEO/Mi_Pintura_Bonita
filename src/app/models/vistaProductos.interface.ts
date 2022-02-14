@@ -1,0 +1,21 @@
+export interface VistaProductos{
+    ID: number,
+    productoID: number,
+    bodegaID: number,
+    CANTIDAD: number,
+    FECHA: Date,
+    TOTAL: number,
+    Nombre_Bodega: String,
+    Descripcion_Bodega: String,
+    Bodega_Ventas: String,
+    Creacion_Bodega: Date,
+    Modificacion_Bodeg: Date,
+    Estatus_Bodega: String,
+    Nombre_Producto: String,
+    Descripcion_Producto: String,
+    Precio_Compra_Producto: number,
+    Precio_Venta_Producto: number,
+    Creacion_Producto: Date,
+    Modificacion_Producto: Date,
+    Estatus_Producto: String
+}

@@ -1,0 +1,39 @@
+<div *ngIf="!buscar" class=" row">
+    <div class="row col-md-5 offset-md-0" *ngFor="let bodega of Bodegas">
+        <div class="card text-center">
+            <div class="card-header bg-dark text-white text-center d-flex justify-content-between align-items-center">
+                {{bodega.NOMBRE}}
+                <button class="btn btn-danger" (click)="deleteBodega(bodega.ID)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <p>Descripcion: {{bodega.DESCRIPCION}}</p>
+                <p>Fecha de Creacion: {{bodega.CREACION}}</p>
+                <a class="btn btn-success btn-block" [routerLink]="['/bodega/edit',bodega.ID]">Editar</a>
+                <a class="btn btn-secondary btn-block" [routerLink]="['/productos-bodega',bodega.ID]">Ver Productos</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="buscar" class=" row">
+    <div class="row col-md-9 offset-md-1">
+        <div class="card text-center">
+            <div class="card-header bg-dark text-white text-center d-flex justify-content-between align-items-center">
+                {{Bodegas.NOMBRE}}
+                <button class="btn btn-danger" (click)="deleteBodega(Bodegas.ID)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <p>Descripcion: {{Bodegas.DESCRIPCION}}</p>
+                <p>Fecha de Creacion: {{Bodegas.CREACION }}</p>
+                <a class="btn btn-success btn-block" [routerLink]="['/bodega/edit',Bodegas.ID]">Editar</a>
+                <a class="btn btn-secondary btn-block" [routerLink]="['/productos-bodega/',Bodegas.ID]">Ver
+                    Productos</a>
+            </div>
+        </div>
+    </div>
+</div>

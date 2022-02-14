@@ -1,0 +1,36 @@
+<div *ngIf="!buscar"class=" row">
+<div  class="row col-md-4 offset-md-0"  *ngFor="let producto of productos">
+        <div  class="card text-center">
+        <div class="card-header bg-dark text-white text-center d-flex justify-content-between align-items-center">
+            {{producto.NOMBRE}}
+            <button class="btn btn-danger" (click)="deleteProducto(producto.ID)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>Descripcion: {{producto.DESCRIPCION}}</p>
+            <p>Precio de Compra: Q{{producto.Precio_Compra}}</p>
+            <p>Precio de Venta: Q{{producto.Precio_Venta}}</p>
+            <p>Fecha de Creacion: {{producto.CREACION}}</p>
+            <a class="btn btn-success btn-block" [routerLink]="['/producto/edit',producto.ID]">Editar</a>
+        </div>
+    </div>
+</div>
+</div>
+<div  *ngIf="buscar" class="col-md-4 offset-md-3" >
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white text-center d-flex justify-content-between align-items-center">
+            {{productos.NOMBRE}}
+            <button class="btn btn-danger" (click)="deleteProducto(productos[0].ID)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>Descripcion: {{productos.DESCRIPCION}}</p>
+            <p>Precio de Compra: Q{{productos.Precio_Compra}}</p>
+            <p>Precio de Venta: Q{{productos.Precio_Venta}}</p>
+            <p>Fecha de Creacion: {{productos.CREACION}}</p>
+            <a class="btn btn-success btn-block" [routerLink]="['/producto/edit',productos.ID]">Editar</a>
+        </div>
+    </div>
+</div>

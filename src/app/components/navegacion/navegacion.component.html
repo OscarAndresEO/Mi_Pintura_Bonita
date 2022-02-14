@@ -1,0 +1,137 @@
+<div class="area"></div>
+<nav class="main-menu">
+  <ul>
+    <li>
+      <a href="/">
+        <i class="fa fa-home fa-2x"></i>
+        <span class="nav-text">
+          Home
+        </span>
+      </a>
+
+    </li>
+    <li class="has-subnav">
+      <a (click)="productos()" routerLinkActive="active">
+        <i class="fa fa-list fa-2x"></i>
+        <span class="nav-text">
+          Productos
+        </span>
+      </a>
+
+    </li>
+    <li>
+      <a (click)="bodegas()" routerLinkActive="active">
+        <i class="fa fa-map-marker fa-2x"></i>
+        <span class="nav-text">
+          Bodegas
+        </span>
+      </a>
+    </li>
+    <li>
+      <a (click)="productos_bodega()" routerLinkActive="active">
+        <i class="fa fa-map-marker fa-2x"></i>
+        <span class="nav-text">
+          Productos en Bodegas
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a href="#">
+        <i class="fa fa-power-off fa-2x"></i>
+        <span class="nav-text">
+          Logout
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div *ngIf="miPintura" class="container navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Mi Pintura Bonita</a>
+  </div>
+</div>
+
+<nav *ngIf="navProductos" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Mi Pintura Bonita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form>
+          <input class="form-control" type="text" [(ngModel)]="productoB.nombre" name="nombre" placeholder="Búscar Producto" aria-label="Búsqueda">
+    </form >
+        <button class="btn btn-success" (click)="bucarProducto()">Buscar</button>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click) ="losProductos()" routerLinkActive="active"><i></i>Todos los Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/producto/add" routerLinkActive="active"><i></i>Crear Producto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<nav *ngIf="navBodegas" class="navbar navbar-expand-lg navbar-light bg-light offset-md-0">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Mi Pintura Bonita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form>
+          <input class="form-control" [(ngModel)]="bodegaB.nombre" name="nombre"type="text" placeholder="Búsqueda" aria-label="Búsqueda">
+        </form>
+        <button class="btn btn-success" (click)="bucarBodega()">Buscar</button>
+       
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click) ="lasBodegas()" routerLinkActive="active"><i></i>Todas las Bodegas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/bodega/add" routerLinkActive="active"><i></i>Crear Bodega</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav *ngIf="navProductos_Bodegas" class="navbar navbar-expand-lg navbar-light bg-light offset-md-0">
+  <div class="container">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Mi Pintura Bonita</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form>
+          <input class="form-control" [(ngModel)]="bodegaB.nombre" name="nombre"type="text" placeholder="Búsqueda" aria-label="Búsqueda">
+        </form>
+        <button class="btn btn-success" (click)="bucarBodega()">Buscar</button>
+       
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" (click) ="lasBodegas()" routerLinkActive="active"><i></i>Todas las Bodegas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/bodega/add" routerLinkActive="active"><i></i>Crear Bodega</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
